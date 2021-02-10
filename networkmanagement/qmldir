@@ -1,0 +1,3 @@
+module Cyber.NetworkManagement
+
+plugin cybernm_qmlplugins
