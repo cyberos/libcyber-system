@@ -33,6 +33,7 @@ class ConnectionIcon : public QObject
     Q_PROPERTY(QString connectionIcon READ connectionIcon NOTIFY connectionIconChanged)
     Q_PROPERTY(QString connectionTooltipIcon READ connectionTooltipIcon NOTIFY connectionTooltipIconChanged)
     Q_PROPERTY(bool needsPortal READ needsPortal NOTIFY needsPortalChanged)
+    Q_PROPERTY(QString currentSSID READ currentSSID NOTIFY currentSSIDChanged)
 
 public:
     explicit ConnectionIcon(QObject* parent = nullptr);
@@ -41,6 +42,8 @@ public:
     bool connecting() const;
     QString connectionIcon() const;
     QString connectionTooltipIcon() const;
+
+    QString currentSSID() const;
 
     bool needsPortal() const { return m_needsPortal; }
 
@@ -71,6 +74,7 @@ Q_SIGNALS:
     void connectionIconChanged(const QString & icon);
     void connectionTooltipIconChanged(const QString & icon);
     void needsPortalChanged(bool needsPortal);
+    void currentSSIDChanged();
 
 private:
     void addActiveConnection(const QString & activeConnection);
@@ -81,6 +85,8 @@ private:
     void setLimited(bool limited);
     uint m_signal;
     NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
+
+    QString m_currentSSID;
 
     bool m_connecting;
     bool m_limited;

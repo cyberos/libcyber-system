@@ -116,6 +116,11 @@ QString ConnectionIcon::connectionTooltipIcon() const
     return m_connectionTooltipIcon;
 }
 
+QString ConnectionIcon::currentSSID() const
+{
+    return m_currentSSID;
+}
+
 void ConnectionIcon::activatingConnectionChanged(const QString& connection)
 {
     Q_UNUSED(connection);
@@ -570,11 +575,17 @@ void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, 
     }
 
     if (m_wirelessNetwork) {
+        m_currentSSID = ssid;
+        emit currentSSIDChanged();
+
         connect(m_wirelessNetwork.data(), &NetworkManager::WirelessNetwork::signalStrengthChanged, this, &ConnectionIcon::setWirelessIconForSignalStrength, Qt::UniqueConnection);
 
         setWirelessIconForSignalStrength(m_wirelessNetwork->signalStrength());
     } else {
         setDisconnectedIcon();
+
+        m_currentSSID = "";
+        emit currentSSIDChanged();
     }
 }
 
