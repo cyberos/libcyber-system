@@ -5,6 +5,7 @@
 #include "appletproxymodel.h"
 #include "technologyproxymodel.h"
 #include "wiressitemsettings.h"
+#include "connectionicon.h"
 
 #include <QQmlEngine>
 
@@ -17,4 +18,5 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<NetworkModel>(uri, 1, 0, "NetworkModel");
     qmlRegisterType<TechnologyProxyModel>(uri, 1, 0, "TechnologyProxyModel");
     qmlRegisterType<WirelessItemSettings>(uri, 1, 0, "WirelessItemSettings");
+    qmlRegisterType<ConnectionIcon>(uri, 1, 0, "ConnectionIcon");
 }

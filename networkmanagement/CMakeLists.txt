@@ -23,6 +23,9 @@ set(NETWORKMGR_SRCS
     uiutils.cpp
     uiutils.h
 
+    connectionicon.cpp
+    connectionicon.h
+
     qmlplugins.cpp
     qmlplugins.h
 )
