@@ -1,0 +1,2 @@
+module Cyber.Accounts
+plugin cyberaccounts_qmlplugins

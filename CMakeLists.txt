@@ -33,4 +33,5 @@ else()
 endif()
 # -------------------------------------------
 
+add_subdirectory(accounts)
 add_subdirectory(networkmanagement)
