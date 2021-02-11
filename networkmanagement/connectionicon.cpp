@@ -16,7 +16,6 @@
 */
 
 #include "connectionicon.h"
-// #include "configuration.h"
 #include "uiutils.h"
 
 #include <NetworkManagerQt/BluetoothDevice>
@@ -250,6 +249,10 @@ void ConnectionIcon::vpnConnectionStateChanged(NetworkManager::VpnConnection::St
 void ConnectionIcon::wirelessEnabledChanged(bool enabled)
 {
     Q_UNUSED(enabled);
+
+    m_currentSSID = "";
+    emit currentSSIDChanged();
+
     setIcons();
 }
 
