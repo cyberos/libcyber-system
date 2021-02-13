@@ -34,4 +34,5 @@ endif()
 # -------------------------------------------
 
 add_subdirectory(accounts)
+add_subdirectory(mpris)
 add_subdirectory(networkmanagement)

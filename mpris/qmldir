@@ -1,0 +1,2 @@
+module Cyber.Mpris
+plugin cybermpris_qmlplugins
