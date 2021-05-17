@@ -3,7 +3,7 @@
 ## Dependencies
 
 ```shell
-sudo pacman -S gcc cmake qt5-base qt5-quickcontrols2 networkmanager-qt modemmanager-qt
+sudo pacman -S gcc cmake qt5-base qt5-quickcontrols2 qt5-sensors networkmanager-qt modemmanager-qt kscreen
 ```
 
 ## Build and Install
