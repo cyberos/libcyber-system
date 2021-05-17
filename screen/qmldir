@@ -1,0 +1,3 @@
+module Cyber.Screen
+
+plugin cyberscreen_qmlplugins
